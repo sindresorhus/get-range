@@ -1,0 +1,41 @@
+{
+  "name": "get-range",
+  "version": "0.0.0",
+  "description": "Lazy number range generator",
+  "license": "MIT",
+  "repository": "sindresorhus/get-range",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "range",
+    "xrange",
+    "generator",
+    "generate",
+    "iterator",
+    "iterable",
+    "iterate",
+    "gen",
+    "get",
+    "number",
+    "numbers"
+  ],
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
