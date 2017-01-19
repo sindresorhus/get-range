@@ -22,10 +22,7 @@ module.exports = function * (start, stop, step) {
 	validate('stop', stop);
 	validate('step', step);
 
-	let i = start;
-
-	while (step >= 0 ? i < stop : i > stop) {
+	for (let i = start; i < stop; i += step) {
 		yield i;
-		i += step;
 	}
 };
