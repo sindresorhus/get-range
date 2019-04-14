@@ -1,9 +1,9 @@
 import test from 'ava';
-import m from './';
+import getRange from '.';
 
-const get = (...args) => [...m(...args)];
+const get = (...args) => [...getRange(...args)];
 
-test(t => {
+test('main', t => {
 	t.deepEqual(get(0), []);
 	t.deepEqual(get(1), [0]);
 	t.deepEqual(get(2), [0, 1]);
