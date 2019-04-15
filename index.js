@@ -1,7 +1,7 @@
 'use strict';
 
-const validate = (name, val) => {
-	if (!Number.isSafeInteger(val)) {
+const validate = (name, value) => {
+	if (!Number.isSafeInteger(value)) {
 		throw new TypeError(`Expected \`${name}\` to be a safe integer`);
 	}
 };
