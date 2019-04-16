@@ -12,7 +12,7 @@ module.exports = function * ({start = 0, end, step = 1}) {
 	}
 
 	validate('start', start);
-	validate('stop', end);
+	validate('end', end);
 	validate('step', step);
 
 	for (let i = start; i < end; i += step) {

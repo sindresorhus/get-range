@@ -19,7 +19,7 @@ $ npm install get-range
 ```js
 const getRange = require('get-range');
 
-for (const index of getRange(4)) {
+for (const index of getRange({end: 4})) {
 	console.log(index);
 }
 //=> 0
@@ -27,13 +27,13 @@ for (const index of getRange(4)) {
 //=> 2
 //=> 3
 
-const range = getRange(0, 4, 2);
+const range = getRange({start: 0, end: 4, step: 2});
 range.next().value;
 //=> 0
 range.next().value;
 //=> 2
 
-console.log(...getRange(0, -5, -1));
+console.log(...getRange({start: 0, end: -5, step: -1}));
 //=> [0, -1, -2, -3, -4]
 ```
 
@@ -44,31 +44,34 @@ Can replace for-loops in many cases:
 for (let i = 0; i < 5; i++) {}
 
 // After
-for (const i of getRange(5)) {}
+for (const i of getRange({end: 5})) {}
 ```
 
 
 ## API
 
-### getRange(stop)
-### getRange(start, stop, [step])
+### getRange(range)
 
 Returns a [`Generator` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) *(which is both an `Iterable` and `Iterator`)*.
 
-#### start
+#### range
+
+Type: `Object`
+
+##### start
 
 Type: `integer`<br>
 Default: `0`
 
-Start from this number.
+Start of the range.
 
-#### stop
+##### end
 
 Type: `integer`
 
-Stop after this many numbers.
+End of the range.
 
-#### step
+##### step
 
 Type: `integer`<br>
 Default: `1`<br>
