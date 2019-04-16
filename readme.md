@@ -19,18 +19,18 @@ $ npm install get-range
 ```js
 const getRange = require('get-range');
 
-for (const i of getRange(4)) {
-	console.log(i);
+for (const index of getRange(4)) {
+	console.log(index);
 }
 //=> 0
 //=> 1
 //=> 2
 //=> 3
 
-const r = getRange(0, 4, 2);
-r.next().value;
+const range = getRange(0, 4, 2);
+range.next().value;
 //=> 0
-r.next().value;
+range.next().value;
 //=> 2
 
 console.log(...getRange(0, -5, -1));

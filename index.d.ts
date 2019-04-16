@@ -1,37 +1,53 @@
+declare namespace getRange {
+	interface Range {
+		/**
+		Start of the range.
+
+		@default 0
+		*/
+		readonly start?: number;
+
+		/**
+		End of the range.
+		*/
+		readonly end: number;
+
+		/**
+		Distance between numbers.
+
+		Minimum: `1`.
+
+		@default 1
+		*/
+		readonly step?: number;
+	}
+}
+
 /**
 Lazy number range generator.
-
-@param start - Start from this number. Default: `0`.
-@param stop - Stop after this many numbers.
-@param step - Distance between numbers. Default: `1`. Minimum: `1`.
 
 @example
 ```
 import getRange = require('get-range');
 
-for (const i of getRange(4)) {
-	console.log(i);
+for (const index of getRange({end: 4})) {
+	console.log(index);
 }
 //=> 0
 //=> 1
 //=> 2
 //=> 3
 
-const r = getRange(0, 4, 2);
-r.next().value;
+const range = getRange({start: 0, end: 4, step: 2});
+range.next().value;
 //=> 0
-r.next().value;
+range.next().value;
 //=> 2
 
-console.log(...getRange(0, -5, -1));
+console.log(...getRange({start: 0, end: -5, step: -1}));
 //=> [0, -1, -2, -3, -4]
 ```
 */
-declare function getRange(stop: number): IterableIterator<number>;
-declare function getRange(
-	start: number,
-	stop: number,
-	step?: number
-): IterableIterator<number>;
+declare function getRange(range: getRange.Range): IterableIterator<number>;
 
 export = getRange;

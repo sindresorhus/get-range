@@ -6,23 +6,16 @@ const validate = (name, value) => {
 	}
 };
 
-module.exports = function * (start, stop, step) {
-	if (stop === undefined) {
-		stop = start;
-		start = 0;
-	}
-
-	step = typeof step === 'number' ? step : 1;
-
+module.exports = function * ({start = 0, end, step = 1}) {
 	if (step === 0) {
 		throw new TypeError('The `step` parameter cannot be zero');
 	}
 
 	validate('start', start);
-	validate('stop', stop);
+	validate('stop', end);
 	validate('step', step);
 
-	for (let i = start; i < stop; i += step) {
+	for (let i = start; i < end; i += step) {
 		yield i;
 	}
 };
