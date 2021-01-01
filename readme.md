@@ -1,4 +1,4 @@
-# get-range [![Build Status](https://travis-ci.org/sindresorhus/get-range.svg?branch=master)](https://travis-ci.org/sindresorhus/get-range)
+# get-range
 
 > Lazy number range generator
 
