@@ -1,5 +1,5 @@
 import test from 'ava';
-import getRange from '.';
+import getRange from './index.js';
 
 const get = range => [...getRange(range)];
 
@@ -20,4 +20,10 @@ test('main', t => {
 	t.deepEqual(get({start: 0, end: 3, step: 2}), [0, 2]);
 	t.deepEqual(get({start: 0, end: 4, step: 2}), [0, 2]);
 	t.deepEqual(get({start: 0, end: 6, step: 2}), [0, 2, 4]);
+});
+
+test('generator', t => {
+	const range = getRange({start: 0, end: 4, step: 2});
+	t.is(range.next().value, 0);
+	t.is(range.next().value, 2);
 });
