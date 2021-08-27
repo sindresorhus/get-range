@@ -12,8 +12,10 @@ export default function * getRange({start = 0, end, step = 1}) {
 	validate('start', start);
 	validate('end', end);
 	validate('step', step);
+	
+	const compare = step < 0 ? (i) => i > end : (i) => i < end;
 
-	for (let index = start; index < end; index += step) {
+	for (let index = start; compare(index); index += step) {
 		yield index;
 	}
 }
