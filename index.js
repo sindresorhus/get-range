@@ -3,7 +3,9 @@ const validate = (name, value) => {
 		throw new TypeError(`Expected \`${name}\` to be a safe integer`);
 	}
 };
+
 const lt = (l, r) => l < r;
+
 const gt = (l, r) => l > r;
 
 export default function * getRange({start = 0, end, step = 1}) {
