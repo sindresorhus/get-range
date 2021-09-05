@@ -5,7 +5,6 @@ const validate = (name, value) => {
 };
 
 const lt = (l, r) => l < r;
-
 const gt = (l, r) => l > r;
 
 export default function * getRange({start = 0, end, step = 1}) {
