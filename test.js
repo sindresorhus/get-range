@@ -20,6 +20,17 @@ test('main', t => {
 	t.deepEqual(get({start: 0, end: 3, step: 2}), [0, 2]);
 	t.deepEqual(get({start: 0, end: 4, step: 2}), [0, 2]);
 	t.deepEqual(get({start: 0, end: 6, step: 2}), [0, 2, 4]);
+
+	t.deepEqual(get({start: 0, end: -1, step: -1}), [0]);
+	t.deepEqual(get({start: 0, end: -2, step: -1}), [0, -1]);
+	t.deepEqual(get({start: -1, end: -2, step: -1}), [-1]);
+	t.deepEqual(get({start: -1, end: -5, step: -1}), [-1, -2, -3, -4]);
+	t.deepEqual(get({start: 2, end: -2, step: -1}), [2, 1, 0, -1]);
+
+	t.deepEqual(get({start: 0, end: -2, step: -2}), [0]);
+	t.deepEqual(get({start: 0, end: -3, step: -2}), [0, -2]);
+	t.deepEqual(get({start: 0, end: -4, step: -2}), [0, -2]);
+	t.deepEqual(get({start: 0, end: -6, step: -2}), [0, -2, -4]);
 });
 
 test('generator', t => {

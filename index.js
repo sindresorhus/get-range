@@ -4,6 +4,9 @@ const validate = (name, value) => {
 	}
 };
 
+const lt = (l, r) => l < r;
+const gt = (l, r) => l > r;
+
 export default function * getRange({start = 0, end, step = 1}) {
 	if (step === 0) {
 		throw new TypeError('The `step` parameter cannot be zero');
@@ -13,7 +16,9 @@ export default function * getRange({start = 0, end, step = 1}) {
 	validate('end', end);
 	validate('step', step);
 
-	for (let index = start; index < end; index += step) {
+	const compare = step < 0 ? gt : lt;
+
+	for (let index = start; compare(index, end); index += step) {
 		yield index;
 	}
 }
