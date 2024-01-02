@@ -8,8 +8,8 @@ Similar to the Python 3 [`range`](https://docs.python.org/3/library/stdtypes.htm
 
 ## Install
 
-```
-$ npm install get-range
+```sh
+npm install get-range
 ```
 
 ## Usage
