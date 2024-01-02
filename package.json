@@ -1,6 +1,6 @@
 {
 	"name": "get-range",
-	"version": "3.0.1",
+	"version": "4.0.0",
 	"description": "Lazy number range generator",
 	"license": "MIT",
 	"repository": "sindresorhus/get-range",
