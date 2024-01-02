@@ -1,17 +1,17 @@
 const validate = (name, value) => {
 	if (!Number.isSafeInteger(value)) {
-		throw new TypeError(`Expected \`${name}\` to be a safe integer`);
+		throw new TypeError(`Expected \`${name}\` to be a safe integer.`);
 	}
 };
 
-const lt = (l, r) => l < r;
-const gt = (l, r) => l > r;
-const lte = (l, r) => l <= r;
-const gte = (l, r) => l >= r;
+const lt = (left, right) => left < right;
+const gt = (left, right) => left > right;
+const lte = (left, right) => left <= right;
+const gte = (left, right) => left >= right;
 
 export default function * getRange({start = 0, end, step = 1, inclusive = false}) {
 	if (step === 0) {
-		throw new TypeError('The `step` parameter cannot be zero');
+		throw new TypeError('The `step` option cannot be zero.');
 	}
 
 	validate('start', start);
