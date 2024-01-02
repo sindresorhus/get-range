@@ -33,8 +33,8 @@ range.next().value;
 range.next().value;
 //=> 2
 
-console.log(...getRange({start: 0, end: -5, step: -1, inclusive: true}));
-//=> [0, -1, -2, -3, -4, -5]
+console.log(...getRange({start: 0, end: -5, step: -1}));
+//=> [0, -1, -2, -3, -4]
 ```
 
 It can replace normal for-loops in many cases:
@@ -84,3 +84,8 @@ Type: `boolean`\
 Default: `false`
 
 Whether or not to include the end value in the range.
+
+```js
+console.log(...getRange({start: 3, end: 5, inclusive: true}));
+//=> [3, 4, 5]
+```
