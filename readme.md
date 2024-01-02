@@ -77,3 +77,17 @@ Default: `1`\
 Minimum: `1`
 
 Distance between numbers.
+
+##### inclusive
+
+Type: `boolean`\
+Default: `false`
+
+Whether or not to include the end value in the range.
+
+```js
+import getRange from 'get-range';
+
+console.log(...getRange({start: 3, end: 5, inclusive: true}));
+//=> [3, 4, 5]
+```

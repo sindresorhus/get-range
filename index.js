@@ -6,8 +6,10 @@ const validate = (name, value) => {
 
 const lt = (l, r) => l < r;
 const gt = (l, r) => l > r;
+const lte = (l, r) => l <= r;
+const gte = (l, r) => l >= r;
 
-export default function * getRange({start = 0, end, step = 1}) {
+export default function * getRange({start = 0, end, step = 1, inclusive = false}) {
 	if (step === 0) {
 		throw new TypeError('The `step` parameter cannot be zero');
 	}
@@ -16,7 +18,9 @@ export default function * getRange({start = 0, end, step = 1}) {
 	validate('end', end);
 	validate('step', step);
 
-	const compare = step < 0 ? gt : lt;
+	const compareExclusive = step < 0 ? gt : lt;
+	const compareInclusive = step < 0 ? gte : lte;
+	const compare = inclusive ? compareInclusive : compareExclusive;
 
 	for (let index = start; compare(index, end); index += step) {
 		yield index;
