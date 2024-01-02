@@ -1,4 +1,4 @@
-export interface Range {
+export type Range = {
 	/**
 	Start of the range.
 
@@ -19,7 +19,7 @@ export interface Range {
 	@default 1
 	*/
 	readonly step?: number;
-}
+};
 
 /**
 Lazy number range generator.
