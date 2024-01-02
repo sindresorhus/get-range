@@ -24,8 +24,11 @@ export type Range = {
 	Whether or not to include the end value in the range.
 
 	@default false
+
 	@example
 	```
+ 	import getRange from 'get-range';
+
 	console.log(...getRange({start: 3, end: 5, inclusive: true}));
 	//=> [3, 4, 5]
 	```
