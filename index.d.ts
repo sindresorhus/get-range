@@ -19,6 +19,13 @@ export interface Range {
 	@default 1
 	*/
 	readonly step?: number;
+
+	/**
+	Whether or not to include the end value in the range.
+
+	@default false
+	*/
+	readonly inclusive?: boolean;
 }
 
 /**
@@ -44,8 +51,8 @@ range.next().value;
 range.next().value;
 //=> 2
 
-console.log(...getRange({start: 0, end: -5, step: -1}));
-//=> [0, -1, -2, -3, -4]
+console.log(...getRange({start: 0, end: -5, step: -1, inclusive: true}));
+//=> [0, -1, -2, -3, -4, -5]
 ```
 */
 export default function getRange(range: Range): IterableIterator<number>;

@@ -33,8 +33,8 @@ range.next().value;
 range.next().value;
 //=> 2
 
-console.log(...getRange({start: 0, end: -5, step: -1}));
-//=> [0, -1, -2, -3, -4]
+console.log(...getRange({start: 0, end: -5, step: -1, inclusive: true}));
+//=> [0, -1, -2, -3, -4, -5]
 ```
 
 It can replace normal for-loops in many cases:
@@ -77,3 +77,10 @@ Default: `1`\
 Minimum: `1`
 
 Distance between numbers.
+
+##### inclusive
+
+Type: `boolean`\
+Default: `false`
+
+Whether or not to include the end value in the range.
